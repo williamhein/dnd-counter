@@ -763,8 +763,12 @@ function SortProfile()
         for (var j = 0; j < counters.length; j++)
             if (counters[j].profile == profiles[i])
                 newCounters.push(counters[j]);
-    console.log("OLD -> " + counters.length);
-    console.log("NEW -> " + newCounters.length);
+    if (counters.length != newCounters.length)
+    {
+        alert("A counter went missing, reverting.");
+        Alert();
+        return;
+    }
     counters = newCounters;
     DrawCounters();
 }
