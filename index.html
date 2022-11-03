@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html lang="en" manifest="counter.manifest">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width" />
+  <title>DnD Counters</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/png" href="favicon1.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" href="https://i.pinimg.com/originals/e5/16/c7/e516c77d7d44fc50039144a9b528f5db.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-startup-image" href="https://i.pinimg.com/originals/e5/16/c7/e516c77d7d44fc50039144a9b528f5db.png" />
+  <style>
+      body {
+            margin: 0;
+            background: #524a3d;
+            background-image: url(dragon.png), linear-gradient(180deg, rgb(180, 162, 127), #524a3d);
+            background-image: url(dragon.png), -webkit-linear-gradient(rgb(180, 162, 127), #524a3d);
+            background-size: 100px, 100%;
+            background-attachment: fixed;
+            font-family: 'Libre Baskerville', serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            height: 100vh;
+            touch-action: manipulation;
+
+            -webkit-touch-callout: none; 
+            -webkit-user-select: none;
+            -khtml-user-select: none;  
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none;
+        }
+
+        .mdiv {
+            background-color: #f7ebcb;
+            background-image: linear-gradient(180deg, #f7ebcb, #dbd0af);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #7a2b17;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin: 24px 0 12px 0;
+
+            
+        }
+
+        h1::first-letter, h2::first-letter, h3::first-letter, h4::first-letter, h5::first-letter, h6::first-letter {
+                font-size: 150%;
+        }
+
+        h1 {
+            font-size: 48px;
+            border-bottom: 2px solid tan;
+        }
+
+        h2 
+        {
+            font-size: 32px;
+            border-bottom: 1px solid tan;   
+        }
+
+        p {
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        p + p {
+            text-indent: 24px;
+            margin-top: 0!important;
+        }
+
+        .box {
+            background-color: white;
+            padding: 16px;
+            box-sizing: border-box;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        #pageContainer
+        {
+            position: relative;
+            height: 300vh;
+        }
+        #counterContainer 
+        {
+            margin: 0;
+            padding: 2.5%;
+            padding-top: 0;
+            padding-bottom: 1.5%;
+            border: 10px burlywood ridge;
+            box-sizing: border-box;
+            width: 95%;
+            height: 95vh;
+            position: absolute;
+            top: 2.5vh;
+            left: 2.5%;
+            overflow-y: auto;
+        }
+        #toolsContainer 
+        {
+            margin: 0;
+            padding: 0;
+            border: 10px burlywood ridge;
+            box-sizing: border-box;
+            width: 95%;
+            height: 95vh;
+            position: absolute;
+            top: 102.5vh;
+            left: 2.5%;
+            overflow: hidden;
+        }
+        #mathContainer 
+        {
+            margin: 0;
+            padding: 0;
+            border: 10px burlywood ridge;
+            box-sizing: border-box;
+            width: 95%;
+            height: 95vh;
+            position: absolute;
+            top: 202.5vh;
+            left: 2.5%;
+            overflow: hidden;
+        }
+
+  </style>
+</head>
+
+<body ontouchmove="//BlockMove(event);">
+    <div id="pageContainer">
+        <div id="counterContainer" class="mdiv">
+            <h1 style="position: sticky; top: 0; background-color: #f7ebcb; cursor: pointer; z-index: 1000000000;" onclick="var i; for (i = 0; i < 1000; i++) if (document.getElementById('s'+ (i + 1))) ; else break; console.log(i); document.getElementById('s' + i).scrollIntoView({behavior: 'smooth'});" title="Go to latest recap.">Counters</h1>
+
+        </div>
+        <div id="toolsContainer" class="mdiv">
+            <iframe id="toolsIF" src="https://5etools-mirror-1.github.io/" title="5e Tools" style="position: absolute; bottom: 0; border-top: 3px tan double; height: 100%; width: 100%; box-sizing: border-box;"></iframe> 
+
+        </div>
+        <div id="mathContainer" class="mdiv">
+            
+        </div>
+    </div>    
+    <script src="script.js"></script>
+    <script>
+        function BlockMove(event) {
+         // Tell Safari not to move the window.
+         event.preventDefault() ;
+        }
+       </script>
+</body>
+</html>
